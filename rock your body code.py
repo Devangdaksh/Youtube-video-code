@@ -1,26 +1,34 @@
 #Don't For get to run pip install rich on terminal. It will intall all important file to run it.
 
 import sys
-from rich import print
-from time import sleep
 import time
+from rich import print
 
 def printLyrics():
     lines = [
-        ('I wanna da-', 0.06), #1
-        ('I wanna dance in the lights', 0.05), #2
-        ('I wanna ro-', 0.07), #3
-        ('I wanna rock your body', 0.08), #4
-        ('I wanna go-', 0.08), #5
-        ('I wanna go for a ride', 0.68), #6
-        ('Hop in the music and', 0.07), #7
-        ('Rock your body', 0.08), #8
-        ('Rock that body', 0.069), #9
-        ('Come on, come on', 0.035), #10
-        ('Come on, come on', 0.05), #11
-        ('(Rock your body)', 0.03), #12
-        ('Rock that body', 0.049), #13
-        ('Come on, come on)', 0.035), #14
-        ('Rock that body', 0.08), #15
-
+        ("I wanna da-", 0.06, 0.4),
+        ("I wanna dance in the lights", 0.05, 0.6),
+        ("I wanna ro-", 0.07, 0.4),
+        ("I wanna rock your body", 0.08, 0.8),
+        ("I wanna go-", 0.08, 0.4),
+        ("I wanna go for a ride", 0.06, 0.9),
+        ("Hop in the music and", 0.07, 0.4),
+        ("Rock your body", 0.08, 0.5),
+        ("Rock that body", 0.07, 0.4),
+        ("Come on, come on", 0.04, 0.3),
+        ("Come on, come on", 0.05, 0.4),
+        ("(Rock your body)", 0.03, 0.4),
+        ("Rock that body", 0.05, 0.4),
+        ("Come on, come on)", 0.04, 0.3),
+        ("Rock that body", 0.08, 0.6),
     ]
+
+    for text, char_delay, line_pause in lines:
+        for char in text:
+            sys.stdout.write(char)
+            sys.stdout.flush()
+            time.sleep(char_delay)
+        print()  # new line
+        time.sleep(line_pause)
+
+printLyrics()
